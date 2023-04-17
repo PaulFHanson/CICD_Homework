@@ -83,15 +83,10 @@ jobs:
         with:
           name: python-app
           path: .
-      - name: Azure Login
-        uses: azure/login@v2
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
-
       - name: "Deploy to Azure Web App"
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: "3300cicdhanson.azurewebsites.net"
+          app-name: "3300cicdhanson"
           slot-name: "Production"
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E4A71BE1C9894E5C840B74AA44F135B1 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D4F4CFE8F5B543078E119DADBACE2AAD }}
