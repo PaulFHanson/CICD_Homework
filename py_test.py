@@ -52,6 +52,12 @@ def test_loan_payment():
         599.55, rel=1e-3
     )  # approx two decimal places
 
+def test_404_error_handling():
+    client = app.test_client()
+    response = client.get('/nonexistent-page')
+    assert response.status_code == 404
+    print(response.data)
+   
 
 # Functional Tests
 def test_home_page(client):

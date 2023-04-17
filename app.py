@@ -40,7 +40,8 @@ class Loan:
 @app.route("/", methods=["GET"])
 def index():
     return render_template("index.html")
-
+def page_not_found(error):
+    return render_template('templates/404.html', error="Page Not Found"), 404
 
 @app.route("/", methods=["POST"])
 def mnthlyPmt():
